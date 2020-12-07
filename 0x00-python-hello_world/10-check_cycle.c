@@ -12,11 +12,10 @@ listint_t *listft, *listsl;
 
 listft = list;
 listsl = list;
-while (listft != NULL)
+while (listft != NULL && listsl != NULL && listft->next != NULL)
 {
 	listsl = listsl->next;
-	listft = listft->next;
-	listft = listft->next;
+	listft = listft->next->next;
 	if (listft == listsl)
 		return (1);
 }
