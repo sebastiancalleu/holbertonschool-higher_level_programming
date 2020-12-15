@@ -29,23 +29,15 @@ int is_palindrome(listint_t **head)
 	listint_t *cpy;
 	int number[5000], a = 0, b;
 
-	while (a < 5000)
-	{
-		number[a] = '\0';
-		a++;
-	}
 	if (*head == NULL)
 		return (1);
+	for (a = 0; a < 5000; a++)
+		number[a] = '\0';
 	cpy = *head;
-	a = 0;
-	while (cpy != NULL)
+	for (a = 0; cpy != NULL; a++)
 	{
 		number[a] = cpy->n;
 		cpy = cpy->next;
-		a++;
-	}
-	for (a = 0; number[a]; a++)
-	{
 	}
 	for (b = 0; number[b]; b++)
 	{
