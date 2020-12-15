@@ -49,11 +49,8 @@ int is_palindrome(listint_t **head)
 	}
 	for (b = 0; number[b]; b++)
 	{
-		printf ("%d = %d\n", number[b], number[(a - 1) - b]);
 		if (number[b] != number[(a - 1) - b])
 			break;
-		/*if (b > a / 2)
-			break;*/
 	}
 	if (b != a)
 		return (0);
