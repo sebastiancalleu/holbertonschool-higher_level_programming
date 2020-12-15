@@ -13,7 +13,7 @@ int is_palindrome(listint_t **head)
 
 	for (a = 0; a < 5000; a++)
 		number[a] = '\0';
-	if (*head == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 	return (1);
 	cpy = *head;
 	for (a = 0; cpy != NULL; a++)
