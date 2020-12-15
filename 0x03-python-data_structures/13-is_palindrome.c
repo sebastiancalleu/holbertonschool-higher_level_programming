@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdio.h>
 
 /**
  * is_palindrome - this function finds a palindrome number.
@@ -8,8 +9,8 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *cpy;
-	int number[5000], a = 0, b;
+	listint_t *cpy = NULL;
+	int number[100000], a = 0, b;
 
 	cpy = *head;
 	for (a = 0; a < 5000; a++)
@@ -24,6 +25,7 @@ int is_palindrome(listint_t **head)
 		if (number[b] != number[(a - 1) - b])
 			break;
 	}
+	printf("%d : %d\n", a, b);
 	if (b != a)
 		return (0);
 	return (1);
