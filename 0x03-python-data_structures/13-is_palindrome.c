@@ -12,7 +12,7 @@ int is_palindrome(listint_t **head)
 	int number[100000], a = 0, b;
 
 	cpy = *head;
-	if (*head == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 	for (a = 0; a < 5000; a++)
 		number[a] = '\0';
