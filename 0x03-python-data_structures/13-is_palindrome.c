@@ -21,9 +21,9 @@ int is_palindrome(listint_t **head)
 		number[a] = cpy->n;
 		cpy = cpy->next;
 	}
-	for (b = 0; number[b]; b++)
+	for (b = 0; b <= a; b++, a--)
 	{
-		if (number[b] != number[(a - 1) - b])
+		if (number[b] != number[(a - 1)])
 			return (0);
 	}
 	return (1);
