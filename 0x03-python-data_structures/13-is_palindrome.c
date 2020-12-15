@@ -1,22 +1,4 @@
 #include "lists.h"
-#include <stdlib.h>
-#include <stdio.h>
-/**
- * resersed - reverse a number.
- * @number: the number.
- * Return: the reversed number.
-int reversed(int number)
-{
-	int revnum = 0;
-
-	while (number > 0)
-	{
-		revnum = revnum * 10 + (number % 10);
-		number = number / 10;
-	}
-	return (revnum);
-}
-*/
 
 /**
  * is_palindrome - this function finds a palindrome number.
