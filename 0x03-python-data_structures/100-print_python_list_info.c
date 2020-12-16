@@ -12,13 +12,13 @@ void print_python_list_info(PyObject *p)
 
 	b = PyList_Size(p);
 
-	PyListObject *aux = (PyListObject *)p;
+	PyListObject *tmp = (PyListObject *)p;
 
 	printf("[*] Size of the Python List = %li\n", b);
-	printf("[*] Allocated = %li\n", aux->allocated);
+	printf("[*] Allocated = %li\n", tmp->allocated);
 	for (a = 0; a < b; a++)
 	{
-		item = PyList_GetItem(p, a);
+		element = PyList_GetItem(p, a);
 		if (PyFloat_Check(element))
 			printf("Element %d: float\n", a);
 		if (PyTuple_Check(element))
