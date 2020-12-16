@@ -8,7 +8,8 @@
 
 void print_python_list_info(PyObject *p)
 {
-	int a, b;
+	int a;
+	long int b;
 	PyObject *element;
 
 	b = PyList_Size(p);
