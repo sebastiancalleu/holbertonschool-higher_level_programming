@@ -1,0 +1,31 @@
+Importing module
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test list
+
+0_test - check correct output
+   	>>> say_my_name("sebastian", "calle")
+	My name is sebastian calle
+
+1_test - first name as a int
+	>>> say_my_name(10, "calle")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+2_test - only first name
+	>>> say_my_name("sebastian")
+	My name is sebastian 
+
+3_test - last name as a int
+	>>> say_my_name("sebastian", 10)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
+
+4_test - no args
+	>>> say_my_name()
+        Traceback (most recent call last):
+        ...
+        TypeError: say_my_name() missing 1 required positional argument: 'first_name'

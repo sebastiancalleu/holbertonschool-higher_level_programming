@@ -1,0 +1,56 @@
+Importing module
+
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Test list
+
+0_test - int matrix int div
+	>>> matrix = [[2, 4, 3], [10, 50, 30]]
+    >>> matrix_divided(matrix, 2)
+    [[1.0, 2.0, 1.5], [5.0, 25.0, 15.0]]
+
+1_test - int matrix float div
+	>>> matrix = [[8, 6, 4], [135, 166, 234]]
+	>>> matrix_divided(matrix, 6.5)
+	[[1.23, 0.92, 0.62], [20.77, 25.54, 36.0]]
+
+2_test - float matrix int div
+	>>> matrix = [[64.5, 34.6, 24.8], [124.2, 121.1, 645.9]]
+	>>> matrix_divided(matrix, 5)
+	[[12.9, 6.92, 4.96], [24.84, 24.22, 129.18]]
+
+3_test - float matrix float div
+	>>> matrix = [[64.5, 34.6, 24.8], [124.2, 121.1, 645.9]]
+	>>> matrix_divided(matrix, 5.3)
+	[[12.17, 6.53, 4.68], [23.43, 22.85, 121.87]]
+
+4_test - mixed matrix int div
+	>>> matrix = [[62.3, 23, 37.1], [54, 23, 87.9]]
+	>>> matrix_divided(matrix, 4)
+	[[15.57, 5.75, 9.28], [13.5, 5.75, 21.98]]
+
+5_test - mixed matrix float div
+	>>> matrix = [[62.3, 23, 37.1], [54, 23, 87.9]]
+	>>> matrix_divided(matrix, 4.2)
+	[[14.83, 5.48, 8.83], [12.86, 5.48, 20.93]]
+
+6_test - div as 0
+	>>> matrix = [[62.3, 23, 37.1], [54, 23, 87.9]]
+	>>> matrix_divided(matrix, 0)
+	Traceback (most recent call last):
+   	...
+   	ZeroDivisionError: division by zero
+
+7_test - diferent row size
+	>>> matrix = [[6.5, 3.4, 2], [3, 4.5]]
+	>>> matrix_divided(matrix, 2)
+	Traceback (most recent call last):
+	...
+	TypeError: Each row of the matrix must have the same size
+
+8_test - div as string
+	>>> matrix = [[6.5, 3.4, 2], [3, 4.5, 3]]
+	>>> matrix_divided(matrix, "holi")
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number

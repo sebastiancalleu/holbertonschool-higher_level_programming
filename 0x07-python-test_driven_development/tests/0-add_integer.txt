@@ -1,0 +1,57 @@
+Importing module
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Test list
+
+0_test - add floats
+    >>> add_integer(4.2, 5.7)
+    9
+
+1_test - add integers
+    >>> add_integer(34, 49)
+    83
+
+2_test - mix type add
+    >>> add_integer(5, 31.3)
+    36
+
+3_test - add strings
+    >>> add_integer("25", "43")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+4_test - add float and string
+    >>> add_integer(5.5, "65")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+5_test - add int and string
+    >>> add_integer(5, "65")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+6_test - add big float
+    >>> add_integer(float('NaN'), 5)
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
+
+7_test - add inf float
+    >>> add_integer(float('inf'), 5)
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+8_test - only one argument
+    >>> add_integer(2)
+    100
+
+
+
+
+
+
