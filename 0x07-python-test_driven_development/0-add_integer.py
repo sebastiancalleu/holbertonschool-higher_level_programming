@@ -9,6 +9,10 @@ b is the second number.
 def add_integer(a, b=98):
     """
     add two integers or floats and return the result.
+
+    arguments
+        a = first number
+        b = second number
     """
     if not (isinstance(a, int)) and not (isinstance(a, float)):
         raise TypeError("a must be an integer")

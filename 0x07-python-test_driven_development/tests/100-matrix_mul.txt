@@ -1,0 +1,87 @@
+Importing module
+
+	>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+Test list
+
+0_test - normal mul
+	>>> matrix_mul([[2, 0, 1], [3, 0, 0], [5, 1, 1]], [[1, 0, 1], [1, 2, 1], [1, 1, 0]])
+	[[3, 1, 2], [3, 0, 3], [7, 3, 6]]
+
+1_test - dif row len in m_a
+	>>> matrix_mul([[1, 2], [1, 2, 3]],[[1, 2], [1, 2]])
+	Traceback (most recent call last):
+	...
+	TypeError: each row of m_a must be of the same size
+
+2_test - dif row len in m_b
+	>>> matrix_mul([[1, 2], [1, 2]],[[1, 2, 3], [1, 2]])
+	Traceback (most recent call last):
+	...
+	TypeError: each row of m_b must be of the same size
+
+3_test - cant multiply
+	>>> matrix_mul([[1, 2 ,3], [1, 2, 3]], [[1, 2], [1, 2]])
+	Traceback (most recent call last):
+	...
+	ValueError: m_a and m_b can't be multiplied
+
+4_test - str in m_a
+	>>> matrix_mul([[1, "holi"], [1, 2]], [[1, 2], [1, 2]])
+	Traceback (most recent call last):
+	...
+	TypeError: m_a should contain only integers or floats
+
+5_test - str in m_b
+	>>> matrix_mul([[1, 2], [1, 2]], [[1, 2], [1, "holi"]])
+	Traceback (most recent call last):
+	...
+	TypeError: m_b should contain only integers or floats
+
+6_test - str as argument
+	>>> matrix_mul("str", [[1, 2], [1, 2]])
+	Traceback (most recent call last):
+	...
+	TypeError: m_a must be a list
+
+7_test - str as argument
+	>>> matrix_mul([[1, 2], [1, 2]], "str")
+	Traceback (most recent call last):
+	...
+	TypeError: m_b must be a list
+
+8_test - empty matrix
+	>>> matrix_mul([], [[1, 2], [1, 2]])
+	Traceback (most recent call last):
+	...
+	ValueError: m_a can't be empty
+
+9_test - empty matrix
+	>>> matrix_mul([[1, 2], [1, 2]], [])
+	Traceback (most recent call last):
+	...
+	ValueError: m_b can't be empty
+
+10_test - list of list
+	>>> matrix_mul([1, 2], [[1, 2], [1, 2]])
+	Traceback (most recent call last):
+	...
+	TypeError: m_a must be a list of lists
+
+11_test - list of list
+	>>> matrix_mul([[1, 2], [1, 2]], [1, 2])
+	Traceback (most recent call last):
+	...
+	TypeError: m_b must be a list of lists
+
+12_test - empty matrix
+	>>> matrix_mul([[]], [[1, 2], [1, 2]])
+	Traceback (most recent call last):
+	...
+	ValueError: m_a can't be empty
+
+13_test - empty matrix
+	>>> matrix_mul([[1, 2], [1, 2]], [[]])
+	Traceback (most recent call last):
+	...
+	ValueError: m_b can't be empty
