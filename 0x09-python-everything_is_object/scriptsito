@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+user_answers_file = open("answers", "r")
+for line in user_answers_file:
+    number = line[0:-1].split()[0]
+    new_answer_file = open(str(number + "-answer.txt"), "w+")
+    new_answer_file.write(str(line.replace(number, "").strip() + "\n"))
+    new_answer_file.close()
+user_answers_file.close()
