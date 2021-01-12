@@ -16,8 +16,8 @@ class Rectangle:
           width = width of the rectangle
           height = height of the rectangle
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def height(self):
@@ -96,6 +96,8 @@ class Rectangle:
           string that prints the rectangle in # chars
         """
         string = ""
+        if self.__width == 0 or self.__height == 0:
+            return string
         for i in range(self.__height):
             if i == (self.__height - 1):
                 string += "#" * self.__width
