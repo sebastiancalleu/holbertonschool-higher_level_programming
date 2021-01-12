@@ -102,7 +102,6 @@ class Rectangle:
         """
         string = ""
         if not isinstance(self.print_symbol, str):
-            print("wtf")
             self.print_symbol = str(self.print_symbol)
         for i in range(self.__height):
             if i == (self.__height - 1):
