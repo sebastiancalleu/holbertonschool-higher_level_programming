@@ -21,7 +21,7 @@ class BaseGeometry:
         integer_validator
         public instance method to validate value as a int.
         """
-        if not type(value) is int:
+        if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greate than 0".format(name))
