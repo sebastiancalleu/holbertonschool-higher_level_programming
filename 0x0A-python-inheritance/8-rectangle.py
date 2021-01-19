@@ -6,6 +6,7 @@ define a basegeometry class.
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+
 class Rectangle(BaseGeometry):
     """
     class to define a rectangle
