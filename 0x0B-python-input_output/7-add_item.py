@@ -2,16 +2,21 @@
 
 import json
 import sys
-import os
 
-if os.path.isfile("add_item.json"):
-    with open("add_item.json", mode="r+", encoding="UTF8") as textfile:
-        list1 = json.load(textfile)
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+
+if __name__ == '__main__':
+    list1 = []
+
+    try:
+        list1 = load_from_json_file("add_item.json")
+    except Exception:
+        save_to_json_file(list1, "add_item.json")
+
     args = list(sys.argv)
+
     for i in range(1, len(args)):
         list1.append(args[i])
-    with open("add_item.json", mode="w", encoding="UTF8") as textfile:
-        textfile.write(json.dumps(list1))
-else:
-    with open("add_item.json", mode="w+", encoding="UTF8") as textfile:
-        textfile.write(json.dumps(list1))
+
+    save_to_json_file(list1, "add_item.json")
