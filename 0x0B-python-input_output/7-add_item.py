@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+"""
+script to add to a json file
+"""
 
 import sys
 
