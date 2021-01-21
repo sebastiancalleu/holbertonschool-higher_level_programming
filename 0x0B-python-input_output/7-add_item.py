@@ -12,6 +12,10 @@ if __name__ == '__main__':
     try:
         list1 = load_from_json_file("add_item.json")
     except Exception:
+        args = list(sys.argv)
+
+        for i in range(1, len(args)):
+            list1.append(args[i])
         save_to_json_file(list1, "add_item.json")
 
     args = list(sys.argv)
