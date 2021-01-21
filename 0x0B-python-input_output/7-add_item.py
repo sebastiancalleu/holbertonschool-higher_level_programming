@@ -15,5 +15,3 @@ if __name__ == '__main__':
         save_to_json_file(list(list1), "add_item.json")
     except Exception:
         save_to_json_file(list(sys.argv[1:]), "add_item.json")
-
-
