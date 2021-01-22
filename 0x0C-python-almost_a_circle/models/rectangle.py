@@ -114,6 +114,20 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
+        """
+        update
+        public instance method
+        update instance attributes
+        """
         if kwargs is not None:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """
+        to_dictionary
+        public instance method
+        returns dict representation
+        of a rectangle
+        """
+        return dict(id = self.id, width = self.width, height = self.height, x = self.x, y = self.y)
