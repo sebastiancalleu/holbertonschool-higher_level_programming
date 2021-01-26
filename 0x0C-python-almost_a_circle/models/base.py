@@ -4,6 +4,8 @@ class to define a base
 """
 
 import json
+import csv
+import turtle
 
 class Base:
     """
@@ -89,3 +91,38 @@ class Base:
         except Exception:
             return []
 
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        save_to_file
+        class method
+        save the json string
+        """
+        if list_objs is None:
+            filename = cls.__name__ + ".csv"
+            with open(filename, mode="w", encoding="UTF8") as textfile:
+                ls = cls.to_json_string(ls)
+                textfile.write(dict1)
+        else:
+            filename = cls.__name__ + ".csv"
+            ls = []
+            for i in range(len(list_objs)):
+                ls.append(list_objs[i].to_dictionary())
+            with open(filename, mode="w", encoding="UTF8") as textfile:
+                dict1 = cls.to_json_string(ls)
+                textfile.write(dict1)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        try:
+            filename = cls.__name__ + ".csv"
+            with  open(filename, mode="r", encoding="UTF8") as textfile:
+                jsonstring = textfile.read()
+                lsdicts = cls.from_json_string(jsonstring)
+
+            lsobj = []
+            for i in range(len(lsdicts)):
+                lsobj.append(cls.create(**lsdicts[i]))
+            return lsobj
+        except Exception:
+            return []
