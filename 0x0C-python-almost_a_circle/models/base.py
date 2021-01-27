@@ -63,6 +63,11 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """
+        from_json_string
+        static method to convert
+        a json string
+        """
         if json_string is None:
             return []
         else:
@@ -70,6 +75,11 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """
+        create
+        classmethod
+        creates a object from a dict
+        """
         if cls.__name__ == "Rectangle":
             dummy = cls(5, 5)
         else:
@@ -79,6 +89,11 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """
+        load_from_file
+        classmethod
+        load from a json file
+        """
         try:
             filename = cls.__name__ + ".json"
             with open(filename, mode="r", encoding="UTF8") as textfile:
@@ -95,9 +110,9 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """
-        save_to_file
+        save_to_file_csv
         class method
-        save the json string
+        save to csv file
         """
         if list_objs is None:
             filename = cls.__name__ + ".csv"
@@ -115,6 +130,11 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        """
+        load_from_file_csv
+        classmethod
+        load a csv file
+        """
         try:
             filename = cls.__name__ + ".csv"
             with open(filename, mode="r", encoding="UTF8") as textfile:

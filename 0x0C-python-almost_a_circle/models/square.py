@@ -13,6 +13,9 @@ class Square(Rectangle):
     """
 
     def __init__(self, size, x=0, y=0, id=None):
+        """
+        constructor
+        """
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
@@ -26,10 +29,16 @@ class Square(Rectangle):
 
     @property
     def size(self):
+        """
+        getter size
+        """
         return(self.width)
 
     @size.setter
     def size(self, size):
+        """
+        setter size
+        """
         if type(size) is not int:
             raise TypeError("width must be an integer")
         if size <= 0:
@@ -38,6 +47,11 @@ class Square(Rectangle):
         self.height = size
 
     def update(self, *args, **kwargs):
+        """
+        update
+        public instance method
+        update atributes
+        """
         if args is not None and len(args) != 0:
             if len(args) == 1:
                 self.id = args[0]
