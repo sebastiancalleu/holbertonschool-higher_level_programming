@@ -21,7 +21,8 @@ class Square(Rectangle):
         public instance method
         string representation of class
         """
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+        return "[Square] ({}) {}/{} - {}".format(self.id,
+                                                 self.x, self.y, self.width)
 
     @property
     def size(self):
@@ -63,4 +64,4 @@ class Square(Rectangle):
         returns dict representation
         of a square
         """
-        return dict(id = self.id, size = self.size, x = self.x, y = self.y)
+        return dict(id=self.id, size=self.size, x=self.x, y=self.y)

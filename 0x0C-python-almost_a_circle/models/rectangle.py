@@ -5,6 +5,7 @@ class to define a rectangle
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """
     class to define a rectangle
@@ -36,7 +37,6 @@ class Rectangle(Base):
         self.__height = height
         self.__x = x
         self.__y = y
-
 
     @property
     def width(self):
@@ -111,7 +111,10 @@ class Rectangle(Base):
         public instance method
         string representation of class
         """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.__x, self.__y,
+                                                       self.__width,
+                                                       self.__height)
 
     def update(self, *args, **kwargs):
         """
@@ -130,4 +133,5 @@ class Rectangle(Base):
         returns dict representation
         of a rectangle
         """
-        return dict(id = self.id, width = self.width, height = self.height, x = self.x, y = self.y)
+        return dict(id=self.id, width=self.width,
+                    height=self.height, x=self.x, y=self.y)

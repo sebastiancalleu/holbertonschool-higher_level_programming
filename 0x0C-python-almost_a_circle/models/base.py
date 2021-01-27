@@ -7,6 +7,7 @@ import json
 import csv
 import turtle
 
+
 class Base:
     """
     Base
@@ -62,7 +63,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        if  json_string is None:
+        if json_string is None:
             return []
         else:
             return json.loads(json_string)
@@ -80,7 +81,7 @@ class Base:
     def load_from_file(cls):
         try:
             filename = cls.__name__ + ".json"
-            with  open(filename, mode="r", encoding="UTF8") as textfile:
+            with open(filename, mode="r", encoding="UTF8") as textfile:
                 jsonstring = textfile.read()
                 lsdicts = cls.from_json_string(jsonstring)
 
@@ -101,28 +102,32 @@ class Base:
         if list_objs is None:
             filename = cls.__name__ + ".csv"
             with open(filename, mode="w", encoding="UTF8") as textfile:
-                ls = cls.to_json_string(ls)
-                textfile.write(dict1)
+                emptyls = csv.writer(textfile)
+                empytls.writerow([])
         else:
             filename = cls.__name__ + ".csv"
             ls = []
             for i in range(len(list_objs)):
                 ls.append(list_objs[i].to_dictionary())
             with open(filename, mode="w", encoding="UTF8") as textfile:
-                dict1 = cls.to_json_string(ls)
-                textfile.write(dict1)
+                dict1 = csv.writer(textfile)
+                dict1.writerow(ls)
 
     @classmethod
     def load_from_file_csv(cls):
         try:
             filename = cls.__name__ + ".csv"
-            with  open(filename, mode="r", encoding="UTF8") as textfile:
-                jsonstring = textfile.read()
-                lsdicts = cls.from_json_string(jsonstring)
+            with open(filename, mode="r", encoding="UTF8") as textfile:
+                lsdicts = csv.reader(textfile)
+                ls = []
+                for row in lsdicts:
+                    for i in range(len(row)):
+                        dist1 = eval(row[i])
+                        ls.append(dist1)
 
             lsobj = []
-            for i in range(len(lsdicts)):
-                lsobj.append(cls.create(**lsdicts[i]))
+            for i in range(len(ls)):
+                lsobj.append(cls.create(**ls[i]))
             return lsobj
         except Exception:
             return []
