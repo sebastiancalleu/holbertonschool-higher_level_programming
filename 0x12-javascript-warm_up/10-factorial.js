@@ -6,7 +6,7 @@ let fact;
 while (process.argv[count1]) { count1++; }
 
 if (count1 < 3) {
-  console.log(NaN);
+  console.log(1);
 } else {
   number = parseInt(process.argv[2]);
   fact = fctorial(number);
