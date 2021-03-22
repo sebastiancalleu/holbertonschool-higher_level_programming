@@ -6,7 +6,7 @@ let number;
 const arr1 = [];
 while (process.argv[count1]) { count1++; }
 
-if (count1 < 3) {
+if (count1 < 4) {
   console.log(0);
 } else {
   for (count2; count2 < count1; count2++) {
