@@ -27,10 +27,9 @@ class Rectangle {
   }
 }
 
-class Square extends Rectangle {
-  constructor (size) {
-    super(size, size);
-  }
+const Square1 = require('./5-square');
+
+class Square extends Square1 {
 
   charPrint (c) {
     let count = 0;
