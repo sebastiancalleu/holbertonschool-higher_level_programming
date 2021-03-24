@@ -6,6 +6,5 @@ const concatfile = process.argv[4];
 const fs = require('fs');
 const data = fs.readFileSync(firstfile, 'utf8');
 const data1 = fs.readFileSync(secondfile, 'utf8');
-const data2 = data + '\n' + data1 + '\n';
 
-fs.writeFileSync(concatfile, data2);
+fs.writeFileSync(concatfile, data + data1, 'utf8');
