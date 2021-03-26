@@ -16,7 +16,8 @@ if __name__ == "__main__":
 
     session = Session(engine)
     st1 = State(name="California")
-    ct1 = City(name="San Francisco", state_id=1)
+    ct1 = City(name="San Francisco")
+    st1.cities.append(ct1)
     session.add(st1)
     session.add(ct1)
     session.commit()
