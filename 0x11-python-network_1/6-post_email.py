@@ -8,4 +8,5 @@ if __name__ == "__main__":
 
     myobj = {"email": sys.argv[2]}
     r = requests.post(sys.argv[1], data=myobj)
-    print(r.text)
+    g = requests.get(sys.argv[1])
+    print(g.text)
