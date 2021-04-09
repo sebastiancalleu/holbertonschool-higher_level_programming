@@ -1,4 +1,4 @@
-#!/user/bin/pyhon3
+#!/user/bin/python3
 """ script to request a URL """
 
 import urllib.request
