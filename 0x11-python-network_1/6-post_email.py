@@ -5,7 +5,6 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    url = sys.argv[1]
     myobj = {"email": sys.argv[2]}
-    r = requests.post(url, data=myobj)
+    r = requests.post(sys.argv[1], data=myobj)
     print(r.text)
