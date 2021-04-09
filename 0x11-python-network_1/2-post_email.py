@@ -1,7 +1,7 @@
 """ script to request a URL """
 
 import urllib.request
-import urllib
+import urllib.parse
 import sys
 
 if __name__ == "__main__":
