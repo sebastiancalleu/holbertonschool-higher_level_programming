@@ -11,4 +11,10 @@ if __name__ == "__main__":
     else:
         myobj = {"q": ""}
     r = requests.post('http://0.0.0.0:5000/search_user', data=myobj)
-    print("[{}] {}".format(r.json()['id'], r.json()['name']))
+    try:
+        if len(r.json()) != 0:
+        print("[{}] {}".format(r.json()['id'], r.json()['name']))
+        else:
+            print("No result")
+    except:
+        print("Not a valid JSON")
