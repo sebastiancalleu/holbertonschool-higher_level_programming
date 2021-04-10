@@ -12,3 +12,4 @@ if __name__ == "__main__":
         for i in range(10):
             print("{}: {}".format(session.json()[i]['sha'],
                                   session.json()[i]['commit']['author']['name']))
+    session.close()
