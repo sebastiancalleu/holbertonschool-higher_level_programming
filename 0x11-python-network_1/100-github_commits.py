@@ -3,6 +3,7 @@
 import requests
 import sys
 
+
 def main(url):
     """ make the request to API and get the last commits """
     session = requests.Session()
