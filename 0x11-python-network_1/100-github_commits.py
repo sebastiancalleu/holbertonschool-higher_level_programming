@@ -6,8 +6,9 @@ import sys
 
 
 if __name__ == "__main__":
-    r = requests.get('https://api.github.com/repos/{}/{}/commits'.format(sys.argv[1], sys.argv[2]))
-    if r.status_code == 200:
+    session = requests.Session()
+    session = session.get('https://api.github.com/repos/{}/{}/commits'.format(sys.argv[1], sys.argv[2]))
+    if session.status_code == 200:
         for i in range(10):
-            print("{}: {}".format(r.json()[i]['sha'],
-                                  r.json()[i]['commit']['author']['name']))
+            print("{}: {}".format(session.json()[i]['sha'],
+                                  session.json()[i]['commit']['author']['name']))
