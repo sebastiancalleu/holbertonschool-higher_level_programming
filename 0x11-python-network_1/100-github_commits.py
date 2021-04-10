@@ -18,8 +18,8 @@ def main(url):
     session.close()
 
 if __name__ == "__main__":
-    repo = sys.argv[1]
-    owner = sys.argv[2]
-    url = 'https://api.github.com/repos/{}/{}/commits'.format(repo, owner)
+    repository_name = sys.argv[1]
+    owner_name = sys.argv[2]
+    url = 'https://api.github.com/repos/{}/{}/commits'.format(owner_name, repository_name)
 
     main(url)
