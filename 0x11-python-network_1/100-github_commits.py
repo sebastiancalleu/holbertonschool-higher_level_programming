@@ -3,11 +3,8 @@
 import requests
 import sys
 
-
-if __name__ == "__main__":
-    repo = sys.argv[1]
-    owner = sys.argv[2]
-    url = 'https://api.github.com/repos/{}/{}/commits'.format(repo, owner)
+def main(url):
+    """ make the request to API and get the last commits """
     session = requests.Session()
     session = session.get(url)
     if session.status_code == requests.codes.ok:
@@ -18,3 +15,10 @@ if __name__ == "__main__":
             print("{}: {}".format(obj['sha'],
                                   obj['commit']['author']['name']))
     session.close()
+
+if __name__ == "__main__":
+    repo = sys.argv[1]
+    owner = sys.argv[2]
+    url = 'https://api.github.com/repos/{}/{}/commits'.format(repo, owner)
+
+    main(url)
