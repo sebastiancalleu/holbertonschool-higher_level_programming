@@ -12,6 +12,7 @@ def main(url):
         for i in range(10):
             print("{}: {}".format(data[i]['sha'],
                                   data[i]['commit']['author']['name']))
+    session.close()
 
 if __name__ == "__main__":
     repo = sys.argv[1]
