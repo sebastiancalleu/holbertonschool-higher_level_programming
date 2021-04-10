@@ -12,7 +12,9 @@ if __name__ == "__main__":
     session = session.get(url)
     if session.status_code == requests.codes.ok:
         jsondata = session.json()
-        for i in range(10):
-            print("{}: {}".format(jsondata[i]['sha'],
-                                  jsondata[i]['commit']['author']['name']))
+        for i, obj in enumerate(jsondata):
+            if i == 10:
+                break
+            print("{}: {}".format(obj['sha'],
+                                  obj['commit']['author']['name']))
     session.close()
