@@ -5,9 +5,11 @@ import sys
 
 
 if __name__ == "__main__":
-    url = 'https://api.github.com/repos/{}/{}/commits'.format(sys.argv[2], sys.argv[1])
+    repo = sys.argv[1]
+    owner = sys.argv[2]
+    url = 'https://api.github.com/repos/{}/{}/commits'.format(owner, repo)
     r = requests.get(url)
-    if r.status_code == 200:
+    if r.status_code == requests.codes.ok:
         for i in range(10):
             print("{}: {}".format(r.json()[i]['sha'],
                                   r.json()[i]['commit']['author']['name']))
