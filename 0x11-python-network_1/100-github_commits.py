@@ -9,7 +9,8 @@ if __name__ == "__main__":
     owner = sys.argv[2]
     url = 'https://api.github.com/repos/{}/{}/commits'.format(owner, repo)
     r = requests.get(url)
+    data = r.json()
     if r.status_code == requests.codes.ok:
         for i in range(10):
-            print("{}: {}".format(r.json()[i]['sha'],
-                                  r.json()[i]['commit']['author']['name']))
+            print("{}: {}".format(data[i]['sha'],
+                                  data[i]['commit']['author']['name']))
