@@ -4,22 +4,10 @@ import requests
 import sys
 
 
-def main(url):
-    """ make the request to API and get the last commits """
-    session = requests.Session()
-    session = session.get(url)
-    if session.status_code == requests.codes.ok:
-        jsondata = session.json()
-        for i, obj in enumerate(jsondata):
-            if i == 10:
-                break
-            print("{}: {}".format(obj['sha'],
-                                  obj['commit']['author']['name']))
-    session.close()
-
 if __name__ == "__main__":
-    repository_name = sys.argv[1]
-    owner_name = sys.argv[2]
-    url = 'https://api.github.com/repos/{}/{}/commits'.format(owner_name, repository_name)
-
-    main(url)
+    url = 'https://api.github.com/repos/{}/{}/commits'.format(sys.argv[2], sys.argv[1])
+    r = requests.get(url)
+    if r.status_code == 200:
+        for i in range(10):
+            print("{}: {}".format(r.json()[i]['sha'],
+                                  r.json()[i]['commit']['author']['name']))
