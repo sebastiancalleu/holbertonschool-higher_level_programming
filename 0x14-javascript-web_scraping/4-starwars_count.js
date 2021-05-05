@@ -17,8 +17,8 @@ request(process.argv[2], function (err, res, body) {
         if (dct2[items].characters[character] === characterurl) { count += 1; }
       }
     }
-    console.log(count);
   } else {
-    return console.log(err);
+    console.log(err);
   }
+  console.log(count);
 });
