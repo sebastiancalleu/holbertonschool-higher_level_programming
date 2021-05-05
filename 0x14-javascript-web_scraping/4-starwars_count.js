@@ -3,7 +3,6 @@
 const request = require('request');
 
 const ID = 18;
-const characterurl = 'https://swapi-api.hbtn.io/api/people/' + ID + '/';
 
 request(process.argv[2], function (err, res, body) {
   if (res.statusCode === 200) {
@@ -12,9 +11,9 @@ request(process.argv[2], function (err, res, body) {
     let count = 0;
     let items = 0;
     let character = 0;
-    for (items in dct2) {
-      for (character in dct2[items].characters) {
-        if (dct2[items].characters[character] === characterurl) { count += 1; }
+    for (items of dct2) {
+      for (character of items.characters) {
+        if (character.includes(ID)) { count += 1; }
       }
     }
     console.log(count);
